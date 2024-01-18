@@ -11,8 +11,9 @@ def main():
         num = input("Enter a number: ").lower()
         if num == "done":
             break
-        smallest = get_smallest(smallest, num)
+        smallest = get_smallest(smallest, int(num))
         print("Smallest number is:", smallest)
+        print(smallest , "is smaller than" , num)
 
 if __name__ == "__main__":
     main()
