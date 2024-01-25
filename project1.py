@@ -21,6 +21,7 @@ def main():
         good_selection = True
         while good_selection:
             selection = input("Enter Valid Selection:")
+            input("Enter ")
             good_selection = conversion_calc(selection)
                     =converting()
 
@@ -37,3 +38,21 @@ if __name__ == "__main__":
     main()
 #Eric Lopez
 #The purpose of the program is to
+#def get_menu():
+    menu_dict = {
+        '1':'',
+        '2':'bananas',
+        '3':'cherries',
+        '4':'pears',
+        'x':'done_ordering',
+    }
+    return menu_dict
+
+def display_menu(menu_dict):
+    for items , values in menu_dict.items():
+        print(items+"."+ values .replace('_',' ').capitalize())
+        menu_selection = input("What would you like to buy? ").upper()
+
+        print("You selected {}". format(menu_dict[menu_selection]))
+
+        return menu_selection
