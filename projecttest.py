@@ -12,7 +12,7 @@ def invert(let):
     elif let=="1":
         return "0"
 
-# convert() : Function to convert numbers from one system to another 
+# convert() : Function to convert numbers from one system to another
 def convert():
     num = input("\nEnter Valid Number : ") # User input of the desired number to be converted
     print("\nIn which system does your number belong?")
@@ -114,7 +114,7 @@ if __name__ == "__main__":
     while True:
         convert()
         # Ask user if wants to continue with another new number
-        choice = input("\nContinue with another number Yes or No : ")
+        choice = input("\nContinue with another number Y or N : ")
         if choice == "Y" or choice == "y":
             continue
         else:
