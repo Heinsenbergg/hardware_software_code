@@ -6,7 +6,7 @@ def intro_msg():
 
 def reverse_word(characters):
     reverse_string = ''
-    for character in characters:
+    while character in characters:
         reverse_string = character + reverse_string
     return reverse_string
 
@@ -18,4 +18,4 @@ def main():
 if __name__ == "__main__":
     main()
 
-#turn for loop into while loop 
+#turn for loop into while loop
