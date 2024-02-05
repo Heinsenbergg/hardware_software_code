@@ -10,6 +10,20 @@ def execute_display(menu_dict):
             print("Invalid entry!")
 
     return selection, menu_dict[selection]
+def check_selection(numbers):
+            list = ["1", "2","X",]
+        for number in numbers:
+            if number.upper() not in list:
+                print("Not Valid Selection")
+                return(False)
+        return(True)
+
+
+        return menu_display
+
+if __name__ == "__main__":
+        check_selection()
+
 
 def menu_display():
     menu_dict = {
@@ -19,14 +33,12 @@ def menu_display():
     }
     return menu_dict
 
-    if answer == "1":
-        choice = decimal_to_binary
-    elif answer == "2":
-        choice = binary_to_decimal
-
 def main():
     sel, choice = execute_display(menu_display())
     print("You selected {} and want to convert {}".format(sel,choice))
+    check = check_selection()
+    return menu_display
+
 
 if __name__ == "__main__":
     main()
@@ -47,6 +59,7 @@ def deci():
 
 if __name__ == "__main__":
     deci()
+
 
 def binary_to_decimal(number):
     result = 0
