@@ -1,8 +1,10 @@
-def execute_display(menu_dict):
+#Eric Lopez
+def execute_display(menu_dict, title):
+    print(title)
     for items, values in menu_dict.items():
         print("{}. {}".format(items, values.capitalize()))
     menu_selection = list(menu_dict.keys())
-    selection = "#"
+    selection = "none"
 
     while selection not in menu_selection:
         selection = input("Enter: ")
@@ -10,39 +12,14 @@ def execute_display(menu_dict):
             print("Invalid entry!")
 
     return selection, menu_dict[selection]
-def check_selection(numbers):
-            list = ["1", "2","X",]
-        for number in numbers:
-            if number.upper() not in list:
-                print("Not Valid Selection")
-                return(False)
-        return(True)
-
-
-        return menu_display
-
-if __name__ == "__main__":
-        check_selection()
-
 
 def menu_display():
     menu_dict = {
-        '1':'decimal_to_binary',
-        '2':'binary_to_decimal',
-        'x':'exit_program'
+        '1': 'decimal to binary',
+        '2': 'binary to decimal',
+        'x': 'exit program'
     }
     return menu_dict
-
-def main():
-    sel, choice = execute_display(menu_display())
-    print("You selected {} and want to convert {}".format(sel,choice))
-    check = check_selection()
-    return menu_display
-
-
-if __name__ == "__main__":
-    main()
-
 
 def decimal_to_binary(number):
     result = ""
@@ -53,13 +30,9 @@ def decimal_to_binary(number):
         result = str(remainder) + result
     return result
 
-def deci():
+def decimal():
     num = input("Enter Decimal Number:")
     print("Decimal {} to Binary: {}".format(num, decimal_to_binary(num)))
-
-if __name__ == "__main__":
-    deci()
-
 
 def binary_to_decimal(number):
     result = 0
@@ -70,9 +43,29 @@ def binary_to_decimal(number):
             power -= 1
         return result
 
-def bina():
+def bin():
     num = input("Enter Binary Number:")
     print("Binary to Decimal: {}".format(binary_to_decimal(num)))
 
+def check_selection():
+    # Function placeholder for future implementation
+    pass
+
+def main():
+    title = "Conversion Calculator"
+
+    while True:
+        sel, choice = execute_display(menu_display(), title)
+        if sel == '1':
+            decimal()
+        elif sel == '2':
+            bin()
+        elif sel == 'x':
+            print("Exiting the program.")
+            break
+        else:
+            print("Invalid selection.")
+        input("Press Enter to continue")
+
 if __name__ == "__main__":
-    bina()
+    main()
